@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show All Of The Proxy</title>
+    <style type="text/css">
+/* Border styles */
+.table thead, .table tr {
+border-top-width: 1px;
+border-top-style: solid;
+border-top-color: rgb(235, 242, 224);
+}
+.table {
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: rgb(235, 242, 224);
+}
+
+/* Padding and font style */
+.table td, .table th {
+padding: 5px 10px;
+font-size: 12px;
+font-family: Verdana;
+color: rgb(149, 170, 109);
+}
+
+/* Alternating background colors */
+.table tr:nth-child(even) {
+background: rgb(230, 238, 214)
+}
+.table tr:nth-child(odd) {
+background: #FFF
+}
+    </style>
+</head>
+<body>
+    <p>The API is:</p>
+    <p>'get': 'get an usable proxy',</p>
+    <p>'refresh': 'refresh proxy pool',</p>
+    <p>'get_all': 'get all proxy from proxy pool',</p>
+    <p>'delete?proxy=XXX.X.X.X:XXXX': 'delete an unuseful proxy',</p>
+    <table class="table" align="center">
+        <thead>
+            <tr>
+                <th>Proxy</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proxy in proxylist%}
+            <tr>
+                <td>{{ proxy }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
